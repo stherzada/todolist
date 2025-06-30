@@ -10,13 +10,11 @@ interface Project {
   tipo: 'Web' | 'Mobile'
   categoria: string
 }
-
 const projectsStore = useProjects()
 const loading = ref(true)
 const showCreateModal = ref(false)
 const showEditModal = ref(false)
 const editingProject = ref<Project | null>(null)
-
 const form = ref({
   nome: '',
   descricao: '',
@@ -26,20 +24,12 @@ const form = ref({
 })
 
 const fetchProjects = async () => {
-  try {
-    console.log('Iniciando busca de projetos...')
     loading.value = true
     await projectsStore.getProjects()
-    console.log('Projetos após busca:', projectsStore.projects)
-  } catch (error) {
-    console.error('Erro ao buscar projetos:', error)
-  } finally {
     loading.value = false
-  }
 }
 
 const createProject = async () => {
-  try {
     const projectData = {
       ...form.value,
       tipo: form.value.tipo as 'Web' | 'Mobile'
@@ -47,15 +37,12 @@ const createProject = async () => {
     await projectsStore.createProject(projectData)
     closeModal()
     resetForm()
-  } catch (error) {
-    console.error('Erro ao criar projeto:', error)
-  }
+  
+  
 }
 
 const updateProject = async () => {
   if (!editingProject.value) return
-  
-  try {
     const projectData = {
       ...form.value,
       tipo: form.value.tipo as 'Web' | 'Mobile'
@@ -63,18 +50,12 @@ const updateProject = async () => {
     await projectsStore.updateProject(editingProject.value.id, projectData)
     closeModal()
     resetForm()
-  } catch (error) {
-    console.error('Erro ao atualizar projeto:', error)
-  }
-}
+ } 
+
 
 const deleteProject = async (id: string) => {
   if (!confirm('Tem certeza que deseja excluir este projeto?')) return
-  try {
-    await projectsStore.deleteProject(id)
-  } catch (error) {
-    console.error('Erro ao excluir projeto:', error)
-  }
+  await projectsStore.deleteProject(id)
 }
 
 const editProject = (project: Project) => {
