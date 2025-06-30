@@ -10,8 +10,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.11.1",
+    "axios": "^1.10.0",
     "nuxt": "^3.17.5",
+    "vee-validate": "^4.15.1",
     "vue": "^3.5.17",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.5.1",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.3"
   }
 }
