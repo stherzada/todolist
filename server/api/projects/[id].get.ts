@@ -1,4 +1,5 @@
 import db from '../../../db.json'
+import type { Project } from '../../types'
 
 export default defineEventHandler(async (event) => {
   const idParam = getRouterParam(event, 'id')
@@ -9,8 +10,7 @@ export default defineEventHandler(async (event) => {
     })
   }
   
-  const id = parseInt(idParam)
-  const project = db.projects.find(p => p.id === id)
+  const project = db.projects.find((p) => p.id.toString() === idParam)
   
   if (!project) {
     throw createError({
@@ -19,5 +19,14 @@ export default defineEventHandler(async (event) => {
     })
   }
   
-  return project
+  const typedProject: Project = {
+    id: typeof project.id === 'string' ? parseInt(project.id) || 0 : project.id,
+    nome: project.nome,
+    descricao: project.descricao,
+    preco: project.preco,
+    tipo: project.tipo,
+    categoria: project.categoria
+  }
+  
+  return typedProject
 }) 

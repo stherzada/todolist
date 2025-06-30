@@ -63,6 +63,14 @@
       "preco": 55,
       "tipo": "Web",
       "categoria": "323"
+    },
+    {
+      "id": "1751307539506431",
+      "nome": "dsdf",
+      "descricao": "sdfdsf",
+      "preco": 677,
+      "tipo": "Web",
+      "categoria": "6"
     }
   ],
   "users": [

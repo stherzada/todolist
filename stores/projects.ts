@@ -17,7 +17,7 @@ export const useProjects = defineStore('projects', () => {
         console.log('Buscando projetos...')
         const { data } = await useFetch('/api/projects')
         console.log('Dados recebidos:', data.value)
-        projects.value = (data.value as Project[]) || []
+        projects.value = (data.value as unknown as Project[]) || []
         console.log('Projetos na store:', projects.value)
     }
 
