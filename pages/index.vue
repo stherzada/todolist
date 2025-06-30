@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useProjects } from '~/stores/projects'
 
 interface Project {
@@ -88,6 +88,18 @@ const formatPrice = (price: number) => {
   })
 }
 
+const hasProjects = computed(() => {
+  return projectsStore.projects && projectsStore.projects.length > 0
+})
+
+const shouldShowProjects = computed(() => {
+  return !loading.value && hasProjects.value
+})
+
+const shouldShowEmptyState = computed(() => {
+  return !loading.value && !hasProjects.value
+})
+
 onMounted(() => {
   fetchProjects()
 })
@@ -121,8 +133,7 @@ onMounted(() => {
         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
       </div>
 
-      <div v-else-if="projectsStore.projects && projectsStore.projects.length > 0" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-         {{ projectsStore.projects.length }} projetos encontrados 
+      <div v-else-if="shouldShowProjects" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="project in (projectsStore.projects || [])"
           :key="project.id"
@@ -177,7 +188,7 @@ onMounted(() => {
       </div>
 
      
-      <div v-else class="text-center py-12">
+      <div v-else-if="shouldShowEmptyState" class="text-center py-12">
         <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
         </svg>
@@ -288,7 +299,6 @@ onMounted(() => {
 <style scoped>
 .line-clamp-2 {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
