@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "api": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.11.1",
@@ -19,6 +20,10 @@
     "yup": "^1.6.1"
   },
   "devDependencies": {
-    "json-server": "^1.0.0-beta.3"
+    "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
+    "autoprefixer": "^10.4.21",
+    "json-server": "^1.0.0-beta.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
   }
 }

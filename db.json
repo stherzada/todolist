@@ -1,0 +1,75 @@
+{
+  "projects": [
+    {
+      "id": "2",
+      "nome": "Projeto Beta",
+      "descricao": "Descrição do projeto Beta",
+      "preco": 2000,
+      "tipo": "Mobile",
+      "categoria": "Tecnologia"
+    },
+    {
+      "id": "3",
+      "nome": "Projeto Gamma",
+      "descricao": "Descrição do projeto Gamma",
+      "preco": 3000,
+      "tipo": "Web",
+      "categoria": "Tecnologia"
+    },
+    {
+      "id": "cc48",
+      "nome": "Projeto Teste",
+      "descricao": "Projeto criado via API",
+      "preco": 1500,
+      "tipo": "Web",
+      "categoria": "Teste"
+    },
+    {
+      "id": "dee6",
+      "nome": "Projeto Teste",
+      "descricao": "Projeto criado via API",
+      "preco": 1500,
+      "tipo": "Web",
+      "categoria": "Teste"
+    },
+    {
+      "id": "2820",
+      "nome": "Projeto Teste",
+      "descricao": "Projeto criado via API",
+      "preco": 1500,
+      "tipo": "Web",
+      "categoria": "Teste"
+    },
+    {
+      "id": "8f17",
+      "nome": "sther",
+      "descricao": "bla bla ",
+      "preco": 5,
+      "tipo": "Web",
+      "categoria": "sim"
+    },
+    {
+      "id": "1751306737925461",
+      "nome": "fdd",
+      "descricao": "gdfdgf",
+      "preco": 4354,
+      "tipo": "Web",
+      "categoria": "23324"
+    },
+    {
+      "id": "1751306917112399",
+      "nome": "cfdgf",
+      "descricao": "fdgdfg",
+      "preco": 55,
+      "tipo": "Web",
+      "categoria": "323"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@email.com",
+      "senha": "123456"
+    }
+  ]
+}
