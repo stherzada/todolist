@@ -10,10 +10,8 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'ID é obrigatório'
     })
   }
-  
-  const id = parseInt(idParam)
+  const id = idParam
   const body = await readBody(event)
-  
   const dbPath = resolve(process.cwd(), 'db.json')
   const db = JSON.parse(readFileSync(dbPath, 'utf-8'))
   
@@ -26,14 +24,11 @@ export default defineEventHandler(async (event) => {
     })
   }
   
-  // Atualizar o projeto
   db.projects[projectIndex] = {
     ...db.projects[projectIndex],
     ...body
   }
   
-  // Salvar no arquivo
   writeFileSync(dbPath, JSON.stringify(db, null, 2))
-  
   return db.projects[projectIndex]
 }) 

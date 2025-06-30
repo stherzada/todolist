@@ -12,13 +12,9 @@ interface Project {
 
 export const useProjects = defineStore('projects', () => {
     const projects = ref<Project[]>([])
-
     const getProjects = async () => {
-        console.log('Buscando projetos...')
         const { data } = await useFetch('/api/projects')
-        console.log('Dados recebidos:', data.value)
         projects.value = (data.value as unknown as Project[]) || []
-        console.log('Projetos na store:', projects.value)
     }
 
     const getProjectById = async (id: string) => {

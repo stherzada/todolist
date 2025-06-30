@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'ID é obrigatório'
     })
   }
-  const id = parseInt(idParam)
+  const id = idParam
   const dbPath = resolve(process.cwd(), 'db.json')
   const db = JSON.parse(readFileSync(dbPath, 'utf-8'))
   

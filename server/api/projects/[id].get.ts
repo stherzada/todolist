@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     })
   }
   
-  const project = db.projects.find((p) => p.id.toString() === idParam)
+  const project = db.projects.find((p) => p.id === idParam)
   
   if (!project) {
     throw createError({
@@ -19,14 +19,5 @@ export default defineEventHandler(async (event) => {
     })
   }
   
-  const typedProject: Project = {
-    id: typeof project.id === 'string' ? parseInt(project.id) || 0 : project.id,
-    nome: project.nome,
-    descricao: project.descricao,
-    preco: project.preco,
-    tipo: project.tipo,
-    categoria: project.categoria
-  }
-  
-  return typedProject
+  return project as Project
 }) 
