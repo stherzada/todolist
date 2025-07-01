@@ -6,54 +6,49 @@
       "descricao": "Descrição do projeto Beta",
       "preco": 2000,
       "tipo": "Mobile",
-      "categoria": "Tecnologia"
+      "categoria": "Tecnologiaa"
     },
     {
       "id": "3",
       "nome": "Projeto Gamma",
       "descricao": "Descrição do projeto Gamma",
-      "preco": 3000,
+      "preco": 30006,
       "tipo": "Web",
       "categoria": "Tecnologia"
     },
     {
-      "id": "cc48",
-      "nome": "Projeto Teste",
-      "descricao": "Projeto criado via API",
-      "preco": 1500,
-      "tipo": "Web",
-      "categoria": "Teste"
-    },
-    {
-      "id": "dee6",
-      "nome": "Projeto Teste",
-      "descricao": "Projeto criado via API",
-      "preco": 1500,
-      "tipo": "Web",
-      "categoria": "Teste"
-    },
-    {
-      "id": "2820",
-      "nome": "Projeto Teste",
-      "descricao": "Projeto criado via API",
-      "preco": 1500,
-      "tipo": "Web",
-      "categoria": "Teste"
-    },
-    {
-      "id": "8f17",
+      "id": "1751330249596453",
       "nome": "sther",
-      "descricao": "bla bla ",
-      "preco": 5,
-      "tipo": "Mobile",
-      "categoria": "sim"
+      "descricao": "dfgfdgfg",
+      "preco": 34554,
+      "tipo": "Web",
+      "categoria": "32234234"
     }
   ],
   "users": [
     {
       "id": "1",
       "email": "admin@email.com",
-      "senha": "123456"
+      "senha": "123456",
+      "nome": "Administrador"
+    },
+    {
+      "id": "1751327107343",
+      "email": "contatostherzada@gmail.com",
+      "senha": "hJ7K7Rq8KWTEp32",
+      "nome": "sther"
+    },
+    {
+      "id": "1751329274817",
+      "email": "stherzada@stherzada.dev",
+      "senha": "sFx6WeTSqqx5fUr",
+      "nome": "sther"
+    },
+    {
+      "id": "1751336039758",
+      "email": "sther@gmail.com",
+      "senha": "654321",
+      "nome": "Jhonatan"
     }
   ]
 }

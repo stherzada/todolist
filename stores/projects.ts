@@ -14,12 +14,12 @@ export const useProjects = defineStore('projects', () => {
     const projects = ref<Project[]>([])
     const getProjects = async () => {
         const { data } = await useFetch('/api/projects')
-        projects.value = (data.value as unknown as Project[]) || []
+        projects.value = (data.value as Project[]) || []
     }
 
     const getProjectById = async (id: string) => {
         const { data } = await useFetch(`/api/projects/${id}`)
-        return data.value as unknown as Project
+        return data.value as Project
     }
 
     const createProject = async (project: Omit<Project, 'id'>) => {
@@ -38,12 +38,6 @@ export const useProjects = defineStore('projects', () => {
             method: 'PUT',
             body: project
         })
-        if (data.value) {
-            const index = projects.value.findIndex(p => p.id === id)
-            if (index !== -1) {
-                projects.value[index] = data.value as Project
-            }
-        }
         return data.value
     }
 
